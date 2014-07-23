@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :rss_feeds
+  resources :rss_feeds do
+    collection do
+      get "all_latest_feeds"
+    end
+  end
+  root 'rss_feeds#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
