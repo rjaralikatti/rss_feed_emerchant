@@ -38,9 +38,18 @@ class RssFeedsController < ApplicationController
     redirect_to rss_feeds_url, notice: 'Rss feed was successfully destroyed.'
   end
 
+  def titles
+    @all_feeds = RssFeed.all
+    @parsed_feeds = RssFeed.fetch_and_parse_feeds(@all_feeds)
+  end
+
+  def reader
+    # will need this if we have filter.
+    # currently not needed.
+  end
+
   def all_latest_feeds
-    feed_urls = @rss_feeds.collect { |rss_feed| rss_feed.feed_url }
-    all_feeds = Feedjira::Feed.fetch_and_parse feed_urls
+    @latest_feeds = RssFeed.get_latest_feeds.first(30)
   end
 
   private

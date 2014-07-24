@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :rss_feeds do
     collection do
+      get "titles"
       get "all_latest_feeds"
+      get "reader"
     end
   end
   root 'rss_feeds#index'

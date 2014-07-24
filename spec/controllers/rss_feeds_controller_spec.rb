@@ -6,7 +6,7 @@ RSpec.describe RssFeedsController, :type => :controller do
   # RssFeed. As you add validations to RssFeed, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    { :name => "Raju", :feed_url => "Some URL", :description => "Some Description" }
+    { :name => "Raju", :feed_url => "file:///home/raju/merchant/feed_reader/spec/test_feed_xmls/test_feed.xml", :description => "Some Description" }
   }
 
   let(:invalid_attributes) {
@@ -85,7 +85,7 @@ RSpec.describe RssFeedsController, :type => :controller do
   describe "PUT update" do
     describe "with valid params" do
       let(:new_attributes) {
-        { :name => "Raju Updated", :feed_url => "Some URL Updated", :description => "Some Description Updated" }
+        { :name => "Raju Updated", :feed_url => "file:///home/raju/merchant/feed_reader/spec/test_feed_xmls/test_feed1.xml", :description => "Some Description Updated" }
       }
 
       it "updates the requested rss_feed" do

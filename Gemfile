@@ -15,6 +15,8 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer',  platforms: :ruby
 # Gem for less
 gem "less-rails"
+# Validators for Model
+#gem "activevalidators"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -49,5 +51,5 @@ end
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 

@@ -6,16 +6,26 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body data-no-turbolink>
 
-<div class="navbar navbar-fixed-top">
-  <div class="container">
-    <h1>RSS Feed Reader</h1>
-  </div>
-</div>
 <div class="container">
   <div class="row">
-    <div class="span9"><%= yield %></div>
+    <div class="span9">
+      <div class="span5">
+        <h1>RSS Feed Reader</h1>
+      </div>
+      <div class="span3">
+        <%= link_to 'Read Feeds', reader_rss_feeds_path,
+                    :class => 'btn btn-primary' %>
+        <%= link_to 'List Feeds', rss_feeds_path,
+                    :class => 'btn btn-primary' %>
+      </div>
+    </div>
+    <div class="span9">
+       <div class="span9">
+         <%= yield %>
+       </div>
+    </div>
   </div>
 </div>
 </body>
