@@ -12,7 +12,7 @@ module RssFetchParse
       entries = []
       parsed_feeds = fetch_and_parse_feeds(all_feeds)
       all_feeds.each do |feed|
-        parsed_feeds[feed.feed_url].entries.each do |entry|
+        parsed_feeds[feed.feed_url].try(:entries).try(:each) do |entry|
           entries << entry
         end
       end

@@ -1,3 +1,3 @@
 <% @all_feeds.each do |feed| %>
-$('#<%= Digest::MD5.hexdigest feed.feed_url %>').replaceWith("<%= @parsed_feeds[feed.feed_url].title %>");
+$('#<%= Digest::MD5.hexdigest feed.feed_url %>').replaceWith("<%= @parsed_feeds[feed.feed_url].title rescue "Failed to Load" %>");
 <% end %>
