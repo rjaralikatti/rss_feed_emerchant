@@ -138,4 +138,13 @@ RSpec.describe RssFeedsController, :type => :controller do
     end
   end
 
+  describe "RSS Feed Reader" do
+    it "renders reader" do
+      RssFeed.create! valid_attributes
+      get :reader
+      expect(response.status).to be(200)
+      expect(response).to render_template("reader")
+    end
+  end
+
 end

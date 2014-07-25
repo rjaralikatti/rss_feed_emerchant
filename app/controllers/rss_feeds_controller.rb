@@ -49,7 +49,7 @@ class RssFeedsController < ApplicationController
   end
 
   def all_latest_feeds
-    @latest_feeds = RssFeed.get_latest_feeds.first(30)
+    @latest_feeds = RssFeed.get_latest_feeds
   end
 
   private
