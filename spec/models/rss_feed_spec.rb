@@ -30,5 +30,7 @@ RSpec.describe RssFeed, :type => :model do
     expect(entries.class).to be(Array)
     expect(entries.size).to be <= 30
     expect(entries.size).to eq(6)
+    expect(entries.first.published.to_s).to eq("2014-04-14 00:00:00 UTC")
+    expect(entries.last.published.to_s).to eq("2014-03-17 00:00:00 UTC")
   end
 end

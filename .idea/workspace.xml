@@ -11,7 +11,7 @@
     <file path="/_form.html.erb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406140368843" ignored="false" />
     <file path="/Guardfile" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406141388257" ignored="false" />
     <file path="/rss_feed.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406241571776" ignored="false" />
-    <file path="/rss_feed_spec.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406243710218" ignored="false" />
+    <file path="/rss_feed_spec.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406266941291" ignored="false" />
     <file path="/factories.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406145499271" ignored="false" />
     <file path="/rss_feeds_controller_spec.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406244318718" ignored="false" />
     <file path="/rss_feeds.rb" changelist="6672c885-d059-4eee-aff6-a7330eaba1d1" time="1406189818298" ignored="false" />
@@ -46,6 +46,11 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
+    <sortChildren value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
@@ -53,15 +58,6 @@
         <entry file="file://$PROJECT_DIR$/spec/controllers/rss_feeds_controller_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="143" column="17" selection-start="4998" selection-end="4998" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb_spec.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spec/views/rss_feeds/index.html.erb_spec.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="10" selection-start="253" selection-end="259" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -85,10 +81,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loading_titles_spec.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="loading_titles_spec.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spec/features/loading_titles_spec.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="45" selection-start="402" selection-end="402" vertical-scroll-proportion="0.32786885">
+            <state line="10" column="45" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rss_feed_spec.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/spec/models/rss_feed_spec.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="32" column="4" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.6712095">
               <folding />
             </state>
           </provider>
@@ -155,7 +160,6 @@
         <option value="$PROJECT_DIR$/app/controllers/rss_feeds_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/concerns/rss_fetch_parse.rb" />
         <option value="$PROJECT_DIR$/spec/test_feed_xmls/test_feed2.xml" />
-        <option value="$PROJECT_DIR$/spec/models/rss_feed_spec.rb" />
         <option value="$PROJECT_DIR$/spec/controllers/rss_feeds_controller_spec.rb" />
         <option value="$PROJECT_DIR$/spec/views/rss_feeds/index.html.erb_spec.rb" />
         <option value="$PROJECT_DIR$/spec/requests/loading_titles_spec.rb" />
@@ -165,6 +169,7 @@
         <option value="$PROJECT_DIR$/spec/support/wait_for_ajax.rb" />
         <option value="$PROJECT_DIR$/spec/features/feed_readers_spec.rb" />
         <option value="$PROJECT_DIR$/spec/features/loading_titles_spec.rb" />
+        <option value="$PROJECT_DIR$/spec/models/rss_feed_spec.rb" />
       </list>
     </option>
   </component>
@@ -283,6 +288,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feed_reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="feed_reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -682,9 +705,9 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32931727" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682731" sideWeight="0.6713396" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27244094" sideWeight="0.6713396" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -783,13 +806,6 @@
         <state line="9" column="24" selection-start="248" selection-end="264" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spec/models/rss_feed_spec.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="36" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spec/views/rss_feeds/index.html.erb_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="10" selection-start="253" selection-end="259" vertical-scroll-proportion="0.0">
@@ -855,7 +871,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spec/features/loading_titles_spec.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="45" selection-start="402" selection-end="402" vertical-scroll-proportion="0.32786885">
+        <state line="10" column="45" selection-start="450" selection-end="450" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/spec/models/rss_feed_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="4" selection-start="1231" selection-end="1231" vertical-scroll-proportion="0.6712095">
           <folding />
         </state>
       </provider>
