@@ -31,6 +31,8 @@ gem 'feedjira', '~> 1.3.0'
 
 gem 'twitter-bootstrap-rails', '~> 2.2.8'
 
+gem 'simple_form'
+
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.2'
   gem 'guard-rspec', '~> 4.3.0'

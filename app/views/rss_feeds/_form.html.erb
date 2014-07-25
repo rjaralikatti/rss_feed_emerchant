@@ -1,16 +1,8 @@
-<%= form_for @rss_feed, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :feed_url, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :feed_url, :class => 'text-field span4' %>
-    </div>
-  </div>
+<%= simple_form_for @rss_feed, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :feed_url %>
+
   <div class="control-group">
     <%= f.label :description, :class => 'control-label' %>
     <div class="controls">
