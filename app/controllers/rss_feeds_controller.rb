@@ -1,5 +1,6 @@
 class RssFeedsController < ApplicationController
   before_action :set_rss_feed, only: [:show, :edit, :update, :destroy]
+  before_action :set_as_admin
 
   def index
     @rss_feeds = RssFeed.all
@@ -60,6 +61,10 @@ class RssFeedsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def rss_feed_params
-    params.require(:rss_feed).permit(:name, :feed_url, :description)
+    params.require(:rss_feed).permit(:name, :feed_url, :description, :crawl)
+  end
+  
+  def set_as_admin
+    @admin = true
   end
 end

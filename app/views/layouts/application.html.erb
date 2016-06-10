@@ -10,17 +10,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="span9">
-      <div class="span5">
-        <h1>RSS Feed Reader</h1>
-      </div>
-      <div class="span3">
-        <%= link_to 'Read Feeds', reader_rss_feeds_path,
-                    :class => 'btn btn-primary' %>
-        <%= link_to 'List Feeds', rss_feeds_path,
-                    :class => 'btn btn-primary' %>
-      </div>
-    </div>
+    <% if @admin %>
+      <%= render partial: 'layouts/admin' %>
+    <% else %>
+      <%= render partial: 'layouts/home' %>
+    <% end %>
     <div class="span11">
       <% flash.each do |name, msg| %>
         <div class="alert alert-success">

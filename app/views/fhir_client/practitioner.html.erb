@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h2>Hello, <%= @practitioner_name %></h2>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Patients</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @patients.each do |patient| %>
+      <tr>
+        <td><%= patient %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

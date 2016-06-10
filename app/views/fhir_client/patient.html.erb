@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h2>Hello, <%= @patient_family_name %>, <%= @patient_given_name %></h2>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Conditions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @conditions.each do |condition| %>
+      <tr>
+        <td><%= condition %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

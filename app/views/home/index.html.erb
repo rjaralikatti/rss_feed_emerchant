@@ -1,0 +1,35 @@
+<div class="home">
+  <form>
+    I am a 
+    <select class="target">
+      <option value="Patient" selected="selected">Patient</option>
+      <option value="Practitioner">Practitioner</option>
+    </select>
+  </form>
+  <div class="hidden" id="practitioner">
+     <%= form_tag(fhir_client_practitioner_path) do %>
+     <p> 
+      Enter your Practitioner ID
+     </p> 
+     <p>
+      <input name="practitioner" type="text">
+     </p>
+     <p>
+      <%= submit_tag 'Submit' %>
+     </p>
+     <% end %>
+   </div>
+  <div id="patient">
+    <%= form_tag(fhir_client_patient_path) do %>
+    <p>
+      Enter your Patient ID
+    </p>
+    <p>
+      <input name="patient" type="text">
+    </p>
+    <p>  
+      <input type="submit" value="submit">
+    </p>
+    <% end %>
+  </div>
+</div>
