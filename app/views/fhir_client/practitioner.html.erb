@@ -1,3 +1,6 @@
+<div class='back'>
+    <%= link_to 'Back', root_path, :class => 'btn btn-primary' %>
+</div>
 <div class="page-header">
   <h2>Hello, <%= @practitioner_name %></h2>
 </div>
@@ -10,7 +13,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= patient %></td>
+        <td><%= link_to patient[:name], fhir_patient_path(patient[:patient_id]) %></td>
       </tr>
     <% end %>
   </tbody>

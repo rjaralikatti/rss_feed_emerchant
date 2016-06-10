@@ -16,7 +16,7 @@ module RssFetchParse
           entries << entry
         end
       end
-      entries.uniq.sort_by { |entry| entry.published }.reverse
+      entries.uniq.sort_by { |entry| entry.published }.reverse.first(100)
     end
   end
 end

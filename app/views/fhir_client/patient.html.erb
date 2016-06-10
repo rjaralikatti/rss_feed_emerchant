@@ -1,6 +1,10 @@
-<div class="page-header">
-  <h2>Hello, <%= @patient_family_name %>, <%= @patient_given_name %></h2>
+<div class='back'>
+    <%= link_to 'Back', root_path, :class => 'btn btn-primary' %>
 </div>
+<h2>Conditions of Patient - <%= @patient_family_name %>, <%= @patient_given_name %></h2>
+<% if @conditions.blank? %>
+  NO CONDITIONS FOUND
+<% else %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -8,10 +12,33 @@
     </tr>
   </thead>
   <tbody>
-    <% @conditions.each do |condition| %>
+    <% if !@conditions.blank? %>
+      <% @conditions.each do |condition| %>
+        <tr>
+          <td><%= condition %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Related RSS Information</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Published Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% RssFeedResult.get_relevant_feeds(@conditions).each do |feed_data| %>
       <tr>
-        <td><%= condition %></td>
+        <td><a href="<%= feed_data.link %>" target='_blank'><%= highlight(feed_data.title, @conditions).html_safe %></a></td>
+        <td><a href="<%= feed_data.link %>" target='_blank'><%= highlight(feed_data.description, @conditions).html_safe  %></a></td>
+        <td><%= feed_data.published_date %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<% end %>
