@@ -1,5 +1,10 @@
 <div class='back'>
+  <% if params["practitioner"].blank? %>
     <%= link_to 'Back', root_path, :class => 'btn btn-primary' %>
+  <% else %>
+    <%= link_to 'Back', fhir_practitioner_path(params["practitioner"]), :class => 'btn btn-primary' %>
+  <% end %>
+    
 </div>
 <h2>Conditions of Patient - <%= @patient_family_name %>, <%= @patient_given_name %></h2>
 <% if @conditions.blank? %>

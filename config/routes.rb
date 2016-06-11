@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   match '/fhir_client/practitioner', to: 'fhir_client#practitioner', via: :post
   match '/fhir_client/patient', to: 'fhir_client#patient', via: :post
   get '/fhir_client/patient/:patient', to: 'fhir_client#patient', as: :fhir_patient
+  get '/fhir_client/practitioner/:practitioner', to: 'fhir_client#practitioner', as: :fhir_practitioner
 
 end

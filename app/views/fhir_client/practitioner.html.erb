@@ -13,7 +13,7 @@
   <tbody>
     <% @patients.each do |patient| %>
       <tr>
-        <td><%= link_to patient[:name], fhir_patient_path(patient[:patient_id]) %></td>
+        <td><%= link_to patient[:name], fhir_patient_path(patient[:patient_id]) + "?practitioner=" + params[:practitioner] %></td>
       </tr>
     <% end %>
   </tbody>
